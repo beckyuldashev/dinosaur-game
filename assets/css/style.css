@@ -1,0 +1,107 @@
+:root {
+  --left-pos: 780px;
+  --clr-neutral-100: hsl(180, 100%, 94%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-accent-100: hsl(120, 61%, 50%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-neutral-100);
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  row-gap: 3rem;
+  font-family: sans-serif;
+  font-size: 1.25rem;
+}
+
+#game {
+  position: relative;
+  width: min(90%, 800px);
+  min-height: 200px;
+  border: 2px solid var(--clr-neutral-900);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#character {
+  position: relative;
+  top: 120px;
+  width: 80px;
+  height: 80px;
+  background-image: url('../img/dinosaur.png');
+  background-size: cover;
+  z-index: 1;
+}
+
+#block {
+  width: 20px;
+  height: 60px;
+  background-color: var(--clr-accent-100);
+  position: relative;
+  top: 60px;
+  left: var(--left-pos);
+}
+
+button {
+  padding: .5em 1em;
+  background-color: wheat;
+  border: 0;
+  border-radius: 5px;
+  font: inherit;
+  display: none;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.btn-show {
+  display: block;
+}
+
+.animate-character {
+  animation: jump .7s linear 1;
+}
+
+.animate-block {
+  animation: block 3s linear infinite;
+}
+
+
+.hide {
+  display: none;
+  animation: none;
+}
+
+@keyframes block {
+  0% {
+    left: var(--left-pos);
+  }
+
+  100% {
+    left: -40px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 120px
+  }
+
+  25% {
+    top: 40px
+  }
+
+  75% {
+    top: 40px
+  }
+
+  100% {
+    top: 120px
+  }
+}
