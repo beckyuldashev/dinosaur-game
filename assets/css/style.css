@@ -55,13 +55,13 @@ button {
   border: 0;
   border-radius: 5px;
   font: inherit;
-  display: none;
+  visibility: hidden;
   cursor: pointer;
   transition: .3s ease;
 }
 
 .btn-show {
-  display: block;
+  visibility: visible;
 }
 
 .animate-character {
@@ -74,7 +74,7 @@ button {
 
 
 .hide {
-  display: none;
+  visibility: hidden;
   animation: none;
 }
 

@@ -24,7 +24,7 @@ function jump() {
 function restartGame() {
   restartBtn.classList.remove('active');
   block.classList.remove('hide');
-
+  restartBtn.classList.remove('btn-show');
 }
 
 function initGame() {
@@ -47,9 +47,9 @@ function initGame() {
 
   document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
-      jump()
+      jump();
     }
-  })
+  });
 
   gameField.addEventListener('click', jump);
 
